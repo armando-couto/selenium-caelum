@@ -44,6 +44,16 @@ public class TesteUsuariosSistema {
 
 		driver.close();
 	}
+	
+	@Test
+    public void deveAlterarUmUsuario() {
+  
+        usuarios.novo().cadastra("Ronaldo Luiz de Albuquerque", "ronaldo2009@terra.com.br");
+        usuarios.altera(1).para("José da Silva", "jose@silva.com");
+         
+        assertFalse(usuarios.existeNaListagem("Ronaldo Luiz de Albuquerque", "ronaldo2009@terra.com.br"));
+        assertTrue(usuarios.existeNaListagem("José da Silva", "jose@silva.com"));
+    }
 
 	@Test
 	public void deveDeletarUmUsuario() {

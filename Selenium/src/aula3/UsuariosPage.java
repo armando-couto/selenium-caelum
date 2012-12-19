@@ -28,6 +28,11 @@ public class UsuariosPage {
 		return driver.getPageSource().contains(nome)
 				&& driver.getPageSource().contains(email);
 	}
+	
+	public AlteraUsuarioPage altera(int posicao) {
+        driver.findElements(By.linkText("editar")).get(posicao-1).click();
+        return new AlteraUsuarioPage(driver);
+    }
 
 	public void deletaUsuarioNaPosicao(int posicao) {
 		driver.findElements(By.tagName("button")).get(posicao - 1).click();
