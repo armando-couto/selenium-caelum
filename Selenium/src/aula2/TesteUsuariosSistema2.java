@@ -13,7 +13,7 @@ public class TesteUsuariosSistema2 {
 	@Test
 	public void deveAdicionarUmUsuario() {
 		WebDriver driver = new FirefoxDriver();
-		driver.get("http://localhost:8080/usuarios/new");
+		driver.get("http://localhost:8080/leiloes/usuarios/new");
 
 		WebElement nome = driver.findElement(By.name("usuario.nome"));
 		WebElement email = driver.findElement(By.name("usuario.email"));
